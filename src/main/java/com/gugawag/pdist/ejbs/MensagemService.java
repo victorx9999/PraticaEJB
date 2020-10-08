@@ -16,9 +16,11 @@ public class MensagemService {
         return mensagemDAO.listar();
     }
 
-    public void inserir(long id, String texto) {
+    public void inserir(long id, String texto){
         Mensagem novaMensagem = new Mensagem(id, texto);
         mensagemDAO.inserir(novaMensagem);
+        if (id == 4)
+            novaMensagem.setTexto(texto + " José Victor Dantas");
     }
 
     public List<Mensagem> pesquisarPorId(long id) {
